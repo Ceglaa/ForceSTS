@@ -1,13 +1,10 @@
-﻿using Exiled.Events.EventArgs;
-using Exiled.API.Features;
-using UnityEngine;
-
-namespace ForceSTS
+﻿namespace ForceSTS.Events
 {
-    public partial class EventHandlers
+    using Exiled.Events.EventArgs;
+    using Exiled.API.Features;
+    using UnityEngine;
+    internal sealed class EventHandlers
     {
-        public ForceSTS plugin;
-        public EventHandlers(ForceSTS plugin) => this.plugin = plugin;
 
         public Vector3 spawnPos = new Vector3(150, 994, -46);
         public Vector3 spawnPos2 = new Vector3(151, 994, -48);
@@ -22,9 +19,9 @@ namespace ForceSTS
                 {
                     MEC.Timing.CallDelayed(0.5f, () =>
                     {
-                        if (ply.Role == RoleType.NtfCommander)
+                        if (ply.Role == RoleType.NtfCaptain)
                         {
-                            ply.Position = new Vector3(165, 994, -56);
+                            ply.Position = new Vector3(178, 994, -53);
                             ply.Rotation = new Vector3(0, 0, 0);
                         }
                         else if (i < 30)
